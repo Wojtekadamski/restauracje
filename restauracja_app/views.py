@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from restauracja_app.models import Restauracja, Typ
+from restauracja_app.models import Restauracja, Type
 
 
 def add_restaurant(request):
@@ -30,10 +30,10 @@ def add_types(request):
         return render(request, 'add_type.html')
     else:
         name = request.POST.get('name')
-        Typ.objects.create(name=name)
+        Type.objects.create(name=name)
         return render(request, 'add_type.html', {'info': 'Dodano nowy typ'})
 def show_types(request):
-    list = Typ.objects.all()
+    list = Type.objects.all()
     context = {'list': list}
     return render(request, "types.html", context)
 
