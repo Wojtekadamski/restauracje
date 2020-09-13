@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <ul>
+    {% for elem in list %}
+        <li><a href="restauracja_info/{{ elem.id }}">{{ elem }}</a> </li>
+    {% endfor %}
+    </ul>
+
+
+{% endblock %}
